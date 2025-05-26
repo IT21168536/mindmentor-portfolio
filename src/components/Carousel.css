@@ -1,70 +1,48 @@
 .carousel-container {
-  position: relative;
+  width: 100%;
   overflow: hidden;
-  margin: 20px 0;
+  padding: 40px 0;
 }
 
 .carousel {
   display: flex;
+  gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  gap: 20px;
-  padding: 20px 0;
-  scroll-behavior: smooth;
-  -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
-  scrollbar-width: none;  /* Hide scrollbar for Firefox */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  padding: 10px;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
 .carousel::-webkit-scrollbar {
-  display: none;
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .carousel img {
-  flex: 0 0 auto;
-  width: 250px;
-  height: 180px;
-  border-radius: 10px;
   scroll-snap-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  object-fit: cover; /* This ensures images maintain aspect ratio while filling the container */
+  min-width: 300px;
+  height: 720px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.carousel-controls {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.carousel-controls button {
-  background-color: #3498db;
-  border: none;
-  color: #e0e0e0;
-  padding: 10px 20px;
-  margin: 0 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.carousel-controls button:hover {
-  background-color: #2980b9;
+.carousel img:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 768px) {
   .carousel img {
-    width: 200px;
-    height: 150px;
-  }
-
-  .carousel-controls button {
-    padding: 8px 15px;
-    font-size: 0.9em;
+    min-width: 240px;
+    height: 360px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .carousel img {
-    width: 150px;
-    height: 120px;
+    min-width: 200px;
+    height: 320px;
   }
 } 
