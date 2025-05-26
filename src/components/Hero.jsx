@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import heroImage from '../assets/images/student-interface.jpg';
 
@@ -89,13 +89,7 @@ const HeroImage = styled.div`
   }
 `;
 
-
-
 const Hero = () => {
-  const [email, setEmail] = useState('');
-  
-
-  
   return (
     <HeroSection>
       <HeroContent>
@@ -105,7 +99,6 @@ const Hero = () => {
             monitoring, academic performance prediction, smart doctor recommendations, and personalized music therapy, 
             MindMentor creates a holistic ecosystem where students can thrive—both mentally and academically. Whether you're a student, teacher, counselor, or school 
             administrator, MindMentor empowers you to understand and respond to learning challenges with intelligent, data-driven tools.</p>
-
         </HeroText>
         <HeroImage>
           <img src={heroImage} alt="MindMentor App" />

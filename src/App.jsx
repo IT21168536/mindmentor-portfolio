@@ -7,8 +7,17 @@ import Download from './pages/Download';
 import './assets/styles/global.css';
 
 function App() {
+  // Get the basename from the current URL
+  const getBasename = () => {
+    const { pathname } = window.location;
+    if (pathname.includes('/mindmentor-portfolio')) {
+      return '/mindmentor-portfolio';
+    }
+    return '';
+  };
+
   return (
-    <Router>
+    <Router basename={getBasename()}>
       <Header />
       <main>
         <Routes>

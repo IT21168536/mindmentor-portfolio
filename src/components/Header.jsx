@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../assets/images/logo.png';
 
@@ -25,6 +25,7 @@ const NavContainer = styled.div`
 const Logo = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
   
   img {
     height: 40px;
@@ -145,6 +146,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -161,10 +163,23 @@ const Header = () => {
     };
   }, []);
 
-  const scrollToSection = (sectionId) => {
+  const handleNavigation = (path, sectionId = null) => {
     setIsMenuOpen(false);
-    // Only handle scrolling if we're on the home page
-    if (location.pathname === '/') {
+    
+    if (location.pathname !== path) {
+      navigate(path);
+      // If we're navigating to a new page and there's a section ID,
+      // scroll to it after a short delay to allow the page to load
+      if (sectionId) {
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    } else if (sectionId) {
+      // If we're already on the correct page, just scroll to the section
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -175,7 +190,7 @@ const Header = () => {
   return (
     <HeaderContainer style={{ boxShadow: scrolled ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none' }}>
       <NavContainer>
-        <Logo>
+        <Logo onClick={() => handleNavigation('/')}>
           <img src={logo} alt="MindMentor Logo" />
           <h1>Mind<span>Mentor</span></h1>
         </Logo>
@@ -187,22 +202,61 @@ const Header = () => {
         </MenuToggle>
         
         <Nav isOpen={isMenuOpen}>
-          <NavLink to="/" className={location.pathname === '/' ? 'active' : ''}>
+          <NavLink 
+            to="/" 
+            className={location.pathname === '/' ? 'active' : ''}
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation('/');
+            }}
+          >
             Home
           </NavLink>
-          <NavLink to="/" onClick={() => scrollToSection('about')}>
+          <NavLink 
+            to="/" 
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation('/', 'about');
+            }}
+          >
             About
           </NavLink>
-          <NavLink to="/" onClick={() => scrollToSection('features')}>
+          <NavLink 
+            to="/" 
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation('/', 'features');
+            }}
+          >
             Features
           </NavLink>
-          <NavLink to="/" onClick={() => scrollToSection('package-list')}>
+          <NavLink 
+            to="/" 
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation('/', 'package-list');
+            }}
+          >
             Pricing
           </NavLink>
-          <NavLink to="/" onClick={() => scrollToSection('feedback')}>
+          <NavLink 
+            to="/" 
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation('/', 'feedback');
+            }}
+          >
             Feedback
           </NavLink>
-          <DownloadButton to="/download">Download</DownloadButton>
+          <DownloadButton 
+            to="/download"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation('/download');
+            }}
+          >
+            Download
+          </DownloadButton>
         </Nav>
       </NavContainer>
     </HeaderContainer>
