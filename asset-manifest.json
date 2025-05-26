@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/mindmentor-portfolio/static/css/main.4556195d.css",
+    "main.js": "/mindmentor-portfolio/static/js/main.eb99901f.js",
+    "static/js/453.b98d7585.chunk.js": "/mindmentor-portfolio/static/js/453.b98d7585.chunk.js",
+    "static/media/study-plan.jpg": "/mindmentor-portfolio/static/media/study-plan.64d54a2e8200005f19fe.jpg",
+    "static/media/academic-form.jpg": "/mindmentor-portfolio/static/media/academic-form.bc11b8dae8e23915f89a.jpg",
+    "static/media/logo.png": "/mindmentor-portfolio/static/media/logo.1fcd07d9befcc18edb69.png",
+    "static/media/dashboard-view.jpg": "/mindmentor-portfolio/static/media/dashboard-view.b9530fdec4e4ab1debe5.jpg",
+    "static/media/doctor-recommendation.jpg": "/mindmentor-portfolio/static/media/doctor-recommendation.90d11a136e7223baa993.jpg",
+    "static/media/music-playlist.jpg": "/mindmentor-portfolio/static/media/music-playlist.68e24279d58f1f44478b.jpg",
+    "static/media/setting.jpg": "/mindmentor-portfolio/static/media/setting.8a09e25ff7f2c4e9f232.jpg",
+    "static/media/profile.jpg": "/mindmentor-portfolio/static/media/profile.134b04627b7896f86aa1.jpg",
+    "static/media/student-interface.jpg": "/mindmentor-portfolio/static/media/student-interface.952164dc571ba5e27017.jpg",
+    "index.html": "/mindmentor-portfolio/index.html",
+    "main.4556195d.css.map": "/mindmentor-portfolio/static/css/main.4556195d.css.map",
+    "main.eb99901f.js.map": "/mindmentor-portfolio/static/js/main.eb99901f.js.map",
+    "453.b98d7585.chunk.js.map": "/mindmentor-portfolio/static/js/453.b98d7585.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4556195d.css",
+    "static/js/main.eb99901f.js"
+  ]
+}
