@@ -1,6 +1,7 @@
 .carousel-container {
   position: relative;
   overflow: hidden;
+  margin: 20px 0;
 }
 
 .carousel {
@@ -10,28 +11,23 @@
   gap: 20px;
   padding: 20px 0;
   scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none;  /* Hide scrollbar for Firefox */
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
 .carousel::-webkit-scrollbar {
-  height: 8px;
-}
-
-.carousel::-webkit-scrollbar-thumb {
-  background: #3498db;
-  border-radius: 10px;
-}
-
-.carousel::-webkit-scrollbar-track {
-  background: #2c2c2c;
+  display: none;
 }
 
 .carousel img {
   flex: 0 0 auto;
   width: 250px;
-  height: auto;
+  height: 180px;
   border-radius: 10px;
   scroll-snap-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  object-fit: cover; /* This ensures images maintain aspect ratio while filling the container */
 }
 
 .carousel-controls {
@@ -57,6 +53,7 @@
 @media (max-width: 768px) {
   .carousel img {
     width: 200px;
+    height: 150px;
   }
 
   .carousel-controls button {
@@ -68,5 +65,6 @@
 @media (max-width: 480px) {
   .carousel img {
     width: 150px;
+    height: 120px;
   }
 } 

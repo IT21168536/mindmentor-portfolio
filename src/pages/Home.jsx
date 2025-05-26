@@ -7,19 +7,19 @@ import Carousel from '../components/Carousel';
 const Home = () => {
   const uiImages = [
     {
-      src: "https://placeholder.com/dashboard-view.jpg",
+      filename: "dashboard-view.jpg",
       alt: "Dashboard View (Emotion + Noise + Behavior Alerts)"
     },
     {
-      src: "https://placeholder.com/student-interface.jpg",
+      filename: "student-interface.jpg",
       alt: "Student Interface with Study Planner & Music Playlist"
     },
     {
-      src: "https://placeholder.com/doctor-recommendation.jpg",
+      filename: "doctor-recommendation.jpg",
       alt: "Doctor Recommendation List"
     },
     {
-      src: "https://placeholder.com/live-monitoring.jpg",
+      filename: "live-monitoring.jpg",
       alt: "Live Monitoring Panel with Face + Sound Input Preview"
     }
   ];
